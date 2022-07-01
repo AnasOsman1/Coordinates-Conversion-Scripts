@@ -98,7 +98,7 @@ def Conversion(File_Path, type):
             i = i[:i.rfind('.csv')]
             UWB.to_csv(i+"_cad.csv")
 
-        if(type == "GPS"):
+        elif(type == "GPS"):
             col_list = ["time_us", "lat", "lon"]
             data = pd.read_csv(i, usecols=col_list)
             GPS = pd.DataFrame(Tri_conv(dis_calc_herv(Lat1, Lon1, data["lat"], data["lon"]),
@@ -110,4 +110,4 @@ def Conversion(File_Path, type):
 
 
 # Function Invoked when Given Path and type of Conversion
-Conversion("/Users/anasosman/Downloads/Experiment2/RoundTrip/Without_Offset", "UWB")
+Conversion(Path, type)
